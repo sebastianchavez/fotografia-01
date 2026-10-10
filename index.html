@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aurea Studio | Fotografía Profesional</title>
+  <meta name="description" content="Estudio fotográfico profesional. Bodas, retratos, eventos y más. Capturamos momentos que perduran.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: '#d4af37',
+            'gold-light': '#f5e6c8',
+            dark: '#0a0a0a',
+            'dark-2': '#111111',
+            'dark-3': '#1a1a1a'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar fixed top-0 left-0 right-0 z-50 py-4">
+    <div class="container mx-auto px-6 flex items-center justify-between">
+      <a href="index.html" class="font-display text-2xl font-bold">
+        <span class="gold-text">Aurea</span> <span class="text-white">Studio</span>
+      </a>
+      <div class="hidden lg:flex items-center gap-8">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="sobre-nosotros.html" class="nav-link">Nosotros</a>
+        <a href="servicios.html" class="nav-link">Servicios</a>
+        <a href="galeria.html" class="nav-link">Galería</a>
+        <a href="clases.html" class="nav-link">Clases</a>
+        <a href="contacto.html" class="nav-link">Contacto</a>
+        <a href="contacto.html" class="btn-gold text-sm">Reservar</a>
+      </div>
+      <button class="menu-toggle lg:hidden text-white text-2xl">☰</button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu">
+    <button class="mobile-menu-close absolute top-6 right-6 text-3xl text-white">×</button>
+    <a href="index.html">Inicio</a>
+    <a href="sobre-nosotros.html">Nosotros</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="galeria.html">Galería</a>
+    <a href="clases.html">Clases</a>
+    <a href="contacto.html">Contacto</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container mx-auto px-6 relative z-10 text-center">
+      <p class="text-gold uppercase tracking-[0.3em] text-sm mb-6 fade-in">Fotografía Profesional desde 2014</p>
+      <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6 fade-in fade-in-delay-1">
+        Capturamos <span class="italic gold-text">momentos</span><br>que perduran
+      </h1>
+      <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 fade-in fade-in-delay-2">
+        Transformamos instantes en recuerdos eternos. Cada imagen cuenta una historia única, la tuya.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in fade-in-delay-3">
+        <a href="contacto.html" class="btn-gold">Reservar Sesión →</a>
+        <a href="galeria.html" class="btn-outline">Ver Galería</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+    </div>
+  </section>
+
+  <!-- SERVICIOS DESTACADOS -->
+  <section class="py-24 bg-dark-2">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16 fade-in">
+        <p class="text-gold uppercase tracking-[0.2em] text-sm mb-3">Lo que hacemos</p>
+        <h2 class="font-display text-4xl md:text-5xl mb-2 section-title">Nuestros Servicios</h2>
+        <p class="text-muted mt-8 max-w-2xl mx-auto">Ofrecemos una amplia gama de servicios fotográficos adaptados a tus necesidades.</p>
+      </div>
+      <div id="services-grid" class="grid md:grid-cols-3 gap-8"></div>
+      <div class="text-center mt-12 fade-in">
+        <a href="servicios.html" class="btn-outline">Ver todos los servicios →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUÉ ELEGIRNOS -->
+  <section class="py-24 bg-dark">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16 fade-in">
+        <p class="text-gold uppercase tracking-[0.2em] text-sm mb-3">Diferenciales</p>
+        <h2 class="font-display text-4xl md:text-5xl mb-2 section-title">Por Qué Elegirnos</h2>
+      </div>
+      <div id="benefits-grid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-10"></div>
+    </div>
+  </section>
+
+  <!-- GALERÍA PREVIEW -->
+  <section class="py-24 bg-dark-2">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16 fade-in">
+        <p class="text-gold uppercase tracking-[0.2em] text-sm mb-3">Portfolio</p>
+        <h2 class="font-display text-4xl md:text-5xl mb-2 section-title">Galería</h2>
+        <p class="text-muted mt-8 max-w-2xl mx-auto">Una selección de nuestros trabajos más recientes.</p>
+      </div>
+      <div id="gallery-preview" class="gallery-grid"></div>
+      <div class="text-center mt-12 fade-in">
+        <a href="galeria.html" class="btn-gold">Ver galería completa →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESTADÍSTICAS -->
+  <section class="py-20 bg-dark-3 border-y border-yellow-900/20">
+    <div class="container mx-auto px-6">
+      <div id="stats-grid" class="grid grid-cols-2 md:grid-cols-4 gap-8"></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="py-24 bg-dark">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16 fade-in">
+        <p class="text-gold uppercase tracking-[0.2em] text-sm mb-3">Testimonios</p>
+        <h2 class="font-display text-4xl md:text-5xl mb-2 section-title">Lo Que Dicen Nuestros Clientes</h2>
+      </div>
+      <div id="testimonials-grid" class="grid md:grid-cols-3 gap-8"></div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="py-24 bg-dark-2 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10" style="background-image: url('https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=1920&q=80'); background-size: cover; background-position: center;"></div>
+    <div class="container mx-auto px-6 relative z-10 text-center fade-in">
+      <h2 class="font-display text-4xl md:text-6xl mb-6">¿Listo para crear algo <span class="italic gold-text">extraordinario</span>?</h2>
+      <p class="text-muted text-lg max-w-2xl mx-auto mb-10">Reserva tu sesión hoy y deja que capturemos los momentos que importan.</p>
+      <a href="contacto.html" class="btn-gold">Reservar Ahora →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark-3 border-t border-yellow-900/20 py-12">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-10 mb-10">
+        <div>
+          <h3 class="font-display text-2xl mb-4"><span class="gold-text">Aurea</span> Studio</h3>
+          <p class="text-muted text-sm">Capturando momentos que perduran desde 2014.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-white">Navegación</h4>
+          <ul class="space-y-2 text-sm text-muted">
+            <li><a href="index.html" class="hover:gold-text">Inicio</a></li>
+            <li><a href="sobre-nosotros.html" class="hover:gold-text">Nosotros</a></li>
+            <li><a href="servicios.html" class="hover:gold-text">Servicios</a></li>
+            <li><a href="galeria.html" class="hover:gold-text">Galería</a></li>
+            <li><a href="clases.html" class="hover:gold-text">Clases</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-white">Legal</h4>
+          <ul class="space-y-2 text-sm text-muted">
+            <li><a href="privacidad.html" class="hover:gold-text">Privacidad</a></li>
+            <li><a href="terminos.html" class="hover:gold-text">Términos</a></li>
+            <li><a href="contacto.html" class="hover:gold-text">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-white">Contacto</h4>
+          <ul class="space-y-2 text-sm text-muted">
+            <li>contacto@aureastudio.com</li>
+            <li>+34 612 345 678</li>
+            <li>Av. de la Luz 142, Madrid</li>
+          </ul>
+          <div class="flex gap-3 mt-4">
+            <a href="#" class="w-9 h-9 rounded-full bg-dark flex items-center justify-center text-muted hover:gold-text hover:border-gold border border-yellow-900/30 transition">IG</a>
+            <a href="#" class="w-9 h-9 rounded-full bg-dark flex items-center justify-center text-muted hover:gold-text hover:border-gold border border-yellow-900/30 transition">FB</a>
+            <a href="#" class="w-9 h-9 rounded-full bg-dark flex items-center justify-center text-muted hover:gold-text hover:border-gold border border-yellow-900/30 transition">PI</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-yellow-900/20 pt-6 text-center text-sm text-muted">
+        © 2026 Aurea Studio. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

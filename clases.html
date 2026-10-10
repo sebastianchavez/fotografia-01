@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clases & Precios | Aurea Studio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { gold: '#d4af37', 'gold-light': '#f5e6c8', dark: '#0a0a0a', 'dark-2': '#111111', 'dark-3': '#1a1a1a' }
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <nav class="navbar fixed top-0 left-0 right-0 z-50 py-4">
+    <div class="container mx-auto px-6 flex items-center justify-between">
+      <a href="index.html" class="font-display text-2xl font-bold"><span class="gold-text">Aurea</span> <span class="text-white">Studio</span></a>
+      <div class="hidden lg:flex items-center gap-8">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="sobre-nosotros.html" class="nav-link">Nosotros</a>
+        <a href="servicios.html" class="nav-link">Servicios</a>
+        <a href="galeria.html" class="nav-link">Galería</a>
+        <a href="clases.html" class="nav-link">Clases</a>
+        <a href="contacto.html" class="nav-link">Contacto</a>
+        <a href="contacto.html" class="btn-gold text-sm">Reservar</a>
+      </div>
+      <button class="menu-toggle lg:hidden text-white text-2xl">☰</button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu">
+    <button class="mobile-menu-close absolute top-6 right-6 text-3xl text-white">×</button>
+    <a href="index.html">Inicio</a>
+    <a href="sobre-nosotros.html">Nosotros</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="galeria.html">Galería</a>
+    <a href="clases.html">Clases</a>
+    <a href="contacto.html">Contacto</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero min-h-[50vh]">
+    <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1920&q=80');"></div>
+    <div class="container mx-auto px-6 relative z-10 text-center">
+      <p class="text-gold uppercase tracking-[0.3em] text-sm mb-6 fade-in">Academia Aurea</p>
+      <h1 class="font-display text-5xl md:text-7xl font-bold mb-4 fade-in fade-in-delay-1">Clases & <span class="italic gold-text">Precios</span></h1>
+      <p class="text-lg text-gray-300 max-w-2xl mx-auto fade-in fade-in-delay-2">Aprende fotografía con los mejores profesionales.</p>
+    </div>
+  </section>
+
+  <!-- CURSOS -->
+  <section class="py-24 bg-dark">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16 fade-in">
+        <p class="text-gold uppercase tracking-[0.2em] text-sm mb-3">Formación</p>
+        <h2 class="font-display text-4xl md:text-5xl section-title">Nuestros Cursos</h2>
+        <p class="text-muted mt-8 max-w-2xl mx-auto">Programas diseñados para todos los niveles, desde principiante hasta avanzado.</p>
+      </div>
+      <div id="courses-grid" class="grid md:grid-cols-2 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- HORARIO SEMANAL -->
+  <section class="py-24 bg-dark-2">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16 fade-in">
+        <p class="text-gold uppercase tracking-[0.2em] text-sm mb-3">Calendario</p>
+        <h2 class="font-display text-4xl md:text-5xl section-title">Horario Semanal</h2>
+        <p class="text-muted mt-8 max-w-2xl mx-auto">Consulta nuestros horarios de clase y planifica tu formación.</p>
+      </div>
+      <div class="max-w-4xl mx-auto overflow-x-auto fade-in">
+        <table class="w-full text-left">
+          <thead>
+            <tr class="border-b-2 border-gold">
+              <th class="py-4 px-4 text-gold uppercase text-xs tracking-wider">Hora</th>
+              <th class="py-4 px-4 text-gold uppercase text-xs tracking-wider">Lunes</th>
+              <th class="py-4 px-4 text-gold uppercase text-xs tracking-wider">Martes</th>
+              <th class="py-4 px-4 text-gold uppercase text-xs tracking-wider">Miércoles</th>
+              <th class="py-4 px-4 text-gold uppercase text-xs tracking-wider">Jueves</th>
+              <th class="py-4 px-4 text-gold uppercase text-xs tracking-wider">Viernes</th>
+              <th class="py-4 px-4 text-gold uppercase text-xs tracking-wider">Sábado</th>
+            </tr>
+          </thead>
+          <tbody id="schedule-table" class="text-sm"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANES / PRECIOS -->
+  <section class="py-24 bg-dark">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16 fade-in">
+        <p class="text-gold uppercase tracking-[0.2em] text-sm mb-3">Inversión</p>
+        <h2 class="font-display text-4xl md:text-5xl section-title">Planes & Precios</h2>
+        <p class="text-muted mt-8 max-w-2xl mx-auto">Elige el plan que mejor se adapte a tus objetivos.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div class="bg-dark-2 border border-yellow-900/30 rounded-2xl p-8 fade-in fade-in-delay-1">
+          <div class="text-gold uppercase tracking-wider text-xs mb-2">Básico</div>
+          <div class="font-display text-5xl mb-1">€220</div>
+          <div class="text-muted text-sm mb-6">por curso</div>
+          <ul class="space-y-3 text-sm text-muted mb-8">
+            <li>✓ 4 semanas de duración</li>
+            <li>✓ Material didáctico</li>
+            <li>✓ Acceso a estudio</li>
+            <li>✓ Certificado de asistencia</li>
+          </ul>
+          <a href="contacto.html" class="btn-outline w-full text-center block">Inscribirme</a>
+        </div>
+        <div class="bg-dark-2 border-2 border-gold rounded-2xl p-8 relative fade-in fade-in-delay-2 transform md:scale-105">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gold text-dark px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Más Popular</div>
+          <div class="text-gold uppercase tracking-wider text-xs mb-2">Intermedio</div>
+          <div class="font-display text-5xl mb-1">€380</div>
+          <div class="text-muted text-sm mb-6">por curso</div>
+          <ul class="space-y-3 text-sm text-muted mb-8">
+            <li>✓ 6 semanas de duración</li>
+            <li>✓ Material didáctico premium</li>
+            <li>✓ Sesiones prácticas extra</li>
+            <li>✓ Mentorías 1:1</li>
+            <li>✓ Acceso comunidad alumni</li>
+          </ul>
+          <a href="contacto.html" class="btn-gold w-full text-center block">Inscribirme</a>
+        </div>
+        <div class="bg-dark-2 border border-yellow-900/30 rounded-2xl p-8 fade-in fade-in-delay-3">
+          <div class="text-gold uppercase tracking-wider text-xs mb-2">Avanzado</div>
+          <div class="font-display text-5xl mb-1">€680</div>
+          <div class="text-muted text-sm mb-6">por curso</div>
+          <ul class="space-y-3 text-sm text-muted mb-8">
+            <li>✓ 8 semanas intensivas</li>
+            <li>✓ Proyecto final real</li>
+            <li>✓ Coaching personalizado</li>
+            <li>✓ Portfolio profesional</li>
+            <li>✓ Prácticas en eventos</li>
+          </ul>
+          <a href="contacto.html" class="btn-outline w-full text-center block">Inscribirme</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark-3 border-t border-yellow-900/20 py-12">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-10 mb-10">
+        <div><h3 class="font-display text-2xl mb-4"><span class="gold-text">Aurea</span> Studio</h3><p class="text-muted text-sm">Capturando momentos que perduran desde 2014.</p></div>
+        <div><h4 class="font-semibold mb-4 text-white">Navegación</h4><ul class="space-y-2 text-sm text-muted"><li><a href="index.html">Inicio</a></li><li><a href="sobre-nosotros.html">Nosotros</a></li><li><a href="servicios.html">Servicios</a></li><li><a href="galeria.html">Galería</a></li><li><a href="clases.html">Clases</a></li></ul></div>
+        <div><h4 class="font-semibold mb-4 text-white">Legal</h4><ul class="space-y-2 text-sm text-muted"><li><a href="privacidad.html">Privacidad</a></li><li><a href="terminos.html">Términos</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
+        <div><h4 class="font-semibold mb-4 text-white">Contacto</h4><ul class="space-y-2 text-sm text-muted"><li>contacto@aureastudio.com</li><li>+34 612 345 678</li><li>Av. de la Luz 142, Madrid</li></ul></div>
+      </div>
+      <div class="border-t border-yellow-900/20 pt-6 text-center text-sm text-muted">© 2026 Aurea Studio. Todos los derechos reservados.</div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.querySelector('#courses-grid');
+      if (grid && window.STUDIO_DATA) {
+        grid.innerHTML = window.STUDIO_DATA.COURSES.map((c, i) => `
+          <div class="course-card fade-in visible fade-in-delay-${(i % 4) + 1}">
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <span class="text-xs uppercase tracking-wider gold-text">${c.level}</span>
+                <h3 class="font-display text-2xl mt-1">${c.title}</h3>
+              </div>
+              <div class="text-right">
+                <div class="font-display text-3xl gold-text">€${c.price}</div>
+                <div class="text-xs text-muted">${c.duration}</div>
+              </div>
+            </div>
+            <p class="text-muted text-sm mb-4">${c.description}</p>
+            <div class="flex items-center gap-2 text-sm">
+              <svg class="w-4 h-4 gold-text" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm.5 5h-2v6l5 3 .75-1.23-3.75-2.25V7z"/></svg>
+              <span>${c.schedule}</span>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // Renderizar tabla de horarios
+      const tbody = document.querySelector('#schedule-table');
+      if (tbody) {
+        const schedule = [
+          { time: '10:00 - 12:00', mon: 'Básico', tue: '', wed: '', thu: '', fri: 'Básico', sat: '' },
+          { time: '12:30 - 14:00', mon: '', tue: 'Edición', wed: '', thu: '', fri: '', sat: 'Básico' },
+          { time: '16:00 - 18:00', mon: '', tue: 'Retrato', wed: '', thu: '', fri: '', sat: 'Bodas' },
+          { time: '18:30 - 20:30', mon: 'Lightroom', tue: 'Retrato', wed: '', thu: 'Retrato', fri: '', sat: '' },
+          { time: '19:00 - 21:30', mon: '', tue: '', wed: 'Iluminación', thu: '', fri: '', sat: '' }
+        ];
+        tbody.innerHTML = schedule.map(row => `
+          <tr class="border-b border-yellow-900/10 hover:bg-dark-3 transition">
+            <td class="py-3 px-4 font-semibold gold-text">${row.time}</td>
+            <td class="py-3 px-4">${row.mon}</td>
+            <td class="py-3 px-4">${row.tue}</td>
+            <td class="py-3 px-4">${row.wed}</td>
+            <td class="py-3 px-4">${row.thu}</td>
+            <td class="py-3 px-4">${row.fri}</td>
+            <td class="py-3 px-4">${row.sat}</td>
+          </tr>
+        `).join('');
+      }
+    });
+  </script>
+</body>
+</html>
