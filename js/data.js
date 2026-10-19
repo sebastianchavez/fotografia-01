@@ -1,16 +1,17 @@
 // ============================================
 // DATOS MOCKEADOS - AUREA STUDIO
+// Contactos y dirección de ejemplo para Chile; reemplazar antes de publicar.
 // ============================================
 
 const STUDIO = {
   name: "Aurea Studio",
   tagline: "Capturamos momentos que perduran",
   description: "Estudio fotográfico profesional con más de 12 años de experiencia creando recuerdos inolvidables.",
-  email: "contacto@aureastudio.com",
-  phone: "+34 612 345 678",
-  phone2: "+34 911 222 333",
-  address: "Av. de la Luz 142, Suite 5B",
-  city: "28001 Madrid, España",
+  email: "contacto@aureastudio.cl",
+  phone: "+56 9 1234 5678",
+  phone2: "+56 2 2345 6789",
+  address: "Av. Providencia 1234, Oficina 502",
+  city: "Providencia, Santiago, Chile",
   social: {
     instagram: "https://instagram.com",
     facebook: "https://facebook.com",
@@ -19,6 +20,15 @@ const STUDIO = {
   }
 };
 
+// Precios de ejemplo en pesos chilenos (CLP).
+function formatCLP(value) {
+  return new Intl.NumberFormat("es-CL", {
+    style: "currency",
+    currency: "CLP",
+    maximumFractionDigits: 0
+  }).format(value) + " CLP";
+}
+
 // SERVICIOS
 const SERVICES = [
   {
@@ -26,7 +36,7 @@ const SERVICES = [
     title: "Bodas & Eventos",
     description: "Cobertura completa de tu día especial con un estilo cinematográfico y emotivo.",
     image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80",
-    priceFrom: 1200,
+    priceFrom: 1200000,
     featured: true
   },
   {
@@ -34,7 +44,7 @@ const SERVICES = [
     title: "Retratos",
     description: "Sesiones personalizadas en estudio o exteriores para capturar tu esencia.",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&q=80",
-    priceFrom: 180,
+    priceFrom: 180000,
     featured: true
   },
   {
@@ -42,28 +52,28 @@ const SERVICES = [
     title: "Corporativo",
     description: "Imágenes profesionales para equipos, branding y comunicación empresarial.",
     image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80",
-    priceFrom: 350
+    priceFrom: 350000
   },
   {
     id: "producto",
     title: "Fotografía de Producto",
     description: "Imágenes comerciales de alta calidad para e-commerce y catálogos.",
     image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&q=80",
-    priceFrom: 90
+    priceFrom: 90000
   },
   {
     id: "eventos",
     title: "Eventos Sociales",
     description: "Cobertura de cumpleaños, bautismos, aniversarios y reuniones.",
     image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80",
-    priceFrom: 280
+    priceFrom: 280000
   },
   {
     id: "maternidad",
     title: "Maternidad & Bebés",
     description: "Sesiones tiernas y delicadas para celebrar la llegada de una nueva vida.",
     image: "https://images.unsplash.com/photo-1544126592-807ade215a0b?w=800&q=80",
-    priceFrom: 220,
+    priceFrom: 220000,
     featured: true
   },
   {
@@ -71,14 +81,14 @@ const SERVICES = [
     title: "Editorial & Moda",
     description: "Producción editorial para revistas, marcas y diseñadores.",
     image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&q=80",
-    priceFrom: 600
+    priceFrom: 600000
   },
   {
     id: "inmuebles",
     title: "Arquitectura & Inmuebles",
     description: "Fotografía arquitectónica para房产, hoteles y espacios comerciales.",
     image: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80",
-    priceFrom: 240
+    priceFrom: 240000
   }
 ];
 
@@ -162,7 +172,7 @@ const COURSES = [
     level: "Principiante",
     duration: "4 semanas",
     description: "Aprende los fundamentos: composición, exposición, iluminación natural y manejo de cámara.",
-    price: 220,
+    price: 220000,
     schedule: "Sábados 10:00 - 12:30"
   },
   {
@@ -170,7 +180,7 @@ const COURSES = [
     level: "Intermedio",
     duration: "6 semanas",
     description: "Técnicas avanzadas de retrato: posing, dirección de modelos, iluminación de estudio.",
-    price: 380,
+    price: 380000,
     schedule: "Martes y Jueves 18:30 - 20:30"
   },
   {
@@ -178,7 +188,7 @@ const COURSES = [
     level: "Intermedio",
     duration: "5 semanas",
     description: "Domina esquemas de luz, modificadores, flashes y técnicas de estudio.",
-    price: 420,
+    price: 420000,
     schedule: "Miércoles 19:00 - 21:30"
   },
   {
@@ -186,7 +196,7 @@ const COURSES = [
     level: "Todos los niveles",
     duration: "4 semanas",
     description: "Edición profesional con Lightroom y Photoshop: revelado, color y exportación.",
-    price: 260,
+    price: 260000,
     schedule: "Lunes 19:00 - 21:00"
   },
   {
@@ -194,7 +204,7 @@ const COURSES = [
     level: "Avanzado",
     duration: "8 semanas",
     description: "Especialízate en fotografía de bodas: narrativa visual, cobertura y entrega final.",
-    price: 680,
+    price: 680000,
     schedule: "Sábados 16:00 - 19:00"
   }
 ];

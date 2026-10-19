@@ -128,7 +128,7 @@ function renderServices() {
         <h3 class="font-display text-xl mb-2">${s.title}</h3>
         <p class="text-muted text-sm mb-4">${s.description}</p>
         <div class="flex items-center justify-between">
-          <span class="gold-text font-semibold">Desde €${s.priceFrom}</span>
+          <span class="gold-text font-semibold">Desde ${formatCLP(s.priceFrom)}</span>
           <a href="servicios.html" class="text-sm gold-text hover:underline">Ver más →</a>
         </div>
       </div>
